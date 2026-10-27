@@ -1,0 +1,90 @@
+:root {
+  --ink: #12263a;
+  --lagoon: #1f6f78;
+  --lagoon-dark: #175860;
+  --brass: #b8893b;
+  --danger: #b3412f;
+  --surface: #ffffff;
+  --page: #eef3f3;
+  --line: #d6e0e0;
+  --chip: #eef3f3;
+  --bs-primary: var(--lagoon);
+  --bs-primary-rgb: 31, 111, 120;
+  --bs-body-font-family: 'Figtree', system-ui, sans-serif;
+}
+[data-bs-theme='dark'] {
+  --surface: #162536;
+  --page: #0d1a27;
+  --line: #29405a;
+  --chip: #213449;
+  --lagoon: #3a9aa5;
+  --lagoon-dark: #2d8089;
+  --bs-body-bg: var(--page);
+  --bs-body-color: #e3ebf0;
+  --bs-primary-rgb: 58, 154, 165;
+}
+[data-bs-theme='light'] { --bs-body-color: var(--ink); }
+
+body { background: var(--page); }
+h1, h2, h3, .brand { font-family: 'Young Serif', Georgia, serif; font-weight: 400; letter-spacing: 0; }
+a { color: var(--lagoon); }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+
+.btn-primary { --bs-btn-bg: var(--lagoon); --bs-btn-border-color: var(--lagoon); --bs-btn-hover-bg: var(--lagoon-dark);
+  --bs-btn-hover-border-color: var(--lagoon-dark); --bs-btn-active-bg: var(--lagoon-dark); --bs-btn-active-border-color: var(--lagoon-dark);
+  --bs-btn-disabled-bg: var(--lagoon); --bs-btn-disabled-border-color: var(--lagoon); }
+.btn-outline-primary { --bs-btn-color: var(--lagoon); --bs-btn-border-color: var(--lagoon); --bs-btn-hover-bg: var(--lagoon); --bs-btn-hover-border-color: var(--lagoon); --bs-btn-active-bg: var(--lagoon); }
+.page-link { color: var(--lagoon); }
+.page-item.active .page-link { background: var(--lagoon); border-color: var(--lagoon); color: #fff; }
+.form-control, .form-select, .modal-content, .table { --bs-body-bg: var(--surface); }
+.table { --bs-table-bg: transparent; }
+
+.topbar { background: #12263a; }
+.topbar .brand { color: #fff; font-size: 1.5rem; text-decoration: none; }
+.topbar .nav-link { color: #cfdcdc; }
+.topbar .nav-link.active, .topbar .nav-link:hover { color: #fff; }
+.topbar .navbar-toggler-icon { filter: invert(1); }
+
+/* The booking search is the hero: it sits on the dark band and overlaps the room list. */
+.hero { background: #12263a; color: #fff; padding: 3.5rem 0 6rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); max-width: 18ch; line-height: 1.1; }
+.hero p { color: #b9c9cc; max-width: 46ch; }
+.search-panel { margin: -3.5rem 0 0; background: var(--surface); border-radius: 6px; padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(18, 38, 58, .15); border-top: 4px solid var(--brass); }
+
+.room-card, .panel, .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.room-card { overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.panel { padding: 1.25rem; }
+.panel.unread { border-left: 4px solid var(--brass); }
+.stat { padding: 1rem 1.25rem; }
+.stat .num { font-family: 'Young Serif', serif; font-size: 1.9rem; line-height: 1.2; }
+.sticky-panel { position: sticky; top: 1rem; }
+.notif-btn { color: inherit !important; }
+
+.room-art { height: 150px; background: linear-gradient(135deg, var(--lagoon), #12263a); color: #ffffffcc; display: flex; align-items: flex-end;
+  padding: .75rem 1rem; font-family: 'Young Serif', serif; font-size: 1.75rem; overflow: hidden; }
+.room-art img { width: 100%; height: 100%; object-fit: cover; margin: -.75rem -1rem; }
+.room-art:has(img) { padding: 0; }
+.room-art:has(img) img { margin: 0; }
+.room-art-lg { height: 320px; border-radius: 6px; }
+.thumb { border: 2px solid transparent; padding: 0; width: 72px; height: 54px; border-radius: 4px; overflow: hidden; background: none; }
+.thumb.active { border-color: var(--brass); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb-wrap { position: relative; }
+.thumb-img { width: 90px; height: 66px; object-fit: cover; border-radius: 4px; }
+.thumb-x { position: absolute; top: -6px; right: -6px; padding: 0 .35rem; line-height: 1.2; border-radius: 50%; }
+
+.price { font-weight: 700; }
+.amenity { background: var(--chip); border-radius: 3px; padding: .15rem .5rem; font-size: .8rem; margin: 0 .25rem .25rem 0; display: inline-block; }
+
+.status { padding: .15rem .55rem; border-radius: 3px; font-size: .78rem; font-weight: 500; text-transform: capitalize; white-space: nowrap; display: inline-block; background: #e5e7ea; color: #333; }
+.status-confirmed, .status-paid, .status-resolved, .status-available, .status-done { background: #dcecee; color: #175860; }
+.status-checked-in, .status-occupied, .status-in-progress { background: #e9efd6; color: #4b5d12; }
+.status-pending, .status-open, .status-cleaning, .status-refund-requested { background: #f6ecd2; color: #7a5a14; }
+.status-cancelled, .status-failed, .status-maintenance, .status-refund-rejected { background: #f6dcd7; color: #b3412f; }
+.status-refunded, .status-checked-out { background: #e5e7ea; color: #444; }
+
+.dash-tabs .nav-link { color: var(--bs-body-color); }
+.dash-tabs .nav-link.active { background: var(--lagoon); color: #fff; }
+.nav-underline .nav-link.active { color: var(--lagoon); border-bottom-color: var(--lagoon); }
+.modal-backdrop.show { opacity: .5; }
